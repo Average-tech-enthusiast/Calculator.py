@@ -1,5 +1,3 @@
 # Calculator.py
 Python Calculator,
- A fun little side project. With features* a normal calculator
- 
- *most of the features
+ A fun little side project. With most features a normal calculator
