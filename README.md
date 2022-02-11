@@ -1,4 +1,5 @@
 # Calculator.py
 Python Calculator,
- A fun little side project. Use it as a normal calculator (just press "enter" everytime you give an input) 
+ A fun little side project. With features* a normal calculator
  
+ *most of the features
