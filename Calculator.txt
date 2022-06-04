@@ -1,11 +1,11 @@
 import os
 import ctypes
-
+from tkinter import *
+from tkinter import messagebox
 
 i = float(input("> "))
 
 while True:
- 
  x = input("+; -; *; /; ^; c; n; e; help > ")
  
  if x=="+" or x=="a":
@@ -57,31 +57,31 @@ while True:
    i = float(input("> "))
  
  elif x=="c" or x=="C":
-  k = input("Clear? [y/n]: ")
-  if k == "y" or k=="Y":
+  response = messagebox.askyesno("Clear","Clear?")
+  if response == 1:
    os.system('cls')
    i = float(input("> "))
   else:
-   continue
+    continue  
  
  elif x=="n" or x=="N":
-  l = input("Change sign?[y/n]: ")
-  if l=="y":
-   i = -i 
+  response = messagebox.askyesno("Negatate","Negatate?")
+  if response == 1:
+    i = -i 
   else:
-   i = i
+    i = i 
  
  elif x=="help" or x=="Help" or x=="HELP" or x=="h":
-  text = '+ or a → Addition \n - or s → Subtraction \n * or m → Multiplication \n / or d → Division \n ^ or p → Exponents \n c or C → Clear \n n or N → Change Signs \n e or E → Exit'
+  text = '+ or a → Addition \n - or s → Subtraction \n * or m → Multiplication \n / or d → Division \n ^ or p → Exponents \n c or C → Clear \n n or N → Negatate \n e or E → Exit'
   title = 'Help'
   ctypes.windll.user32.MessageBoxExW(0, text, title, 0x40000)   
  
  elif x=="e" or x=="E":
-  j = input("Exit? [y/n]: ")
-  if j == "y" or j=="Y":
-   break
-  else:
-   continue
+   response = messagebox.askyesno("Exit","Exit?")
+   if response == 1:
+     exit()
+   else:
+     continue  
  
  else:
   print("Enter Valid Operator")
