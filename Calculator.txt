@@ -1,6 +1,11 @@
+import os
+import ctypes
+
+
 i = float(input("> "))
 
 while True:
+ 
  x = input("+; -; *; /; ^; c; n; e; help > ")
  
  if x=="+" or x=="a":
@@ -40,7 +45,7 @@ while True:
    if i == g > 143:
     print("Too long to send output ಠ_ಠ (Clearing...)")
     i = float(input("> "))
-   elif i>143 and g>143:
+   elif i>=143 and g>=143:
     print("Too long to send output ಠ_ಠ (Clearing...)")
     i = float(input("> "))
    else:
@@ -54,6 +59,7 @@ while True:
  elif x=="c" or x=="C":
   k = input("Clear? [y/n]: ")
   if k == "y" or k=="Y":
+   os.system('cls')
    i = float(input("> "))
   else:
    continue
@@ -66,7 +72,9 @@ while True:
    i = i
  
  elif x=="help" or x=="Help" or x=="HELP" or x=="h":
-  q = input(" + or a → Addition \n - or s → Subtraction \n * or m → Multiplication \n / or d → Division \n ^ or p → Exponents \n c or C → Clear \n n or N → Change Signs \n e or E → Exit \nPress enter to continue")  
+  text = '+ or a → Addition \n - or s → Subtraction \n * or m → Multiplication \n / or d → Division \n ^ or p → Exponents \n c or C → Clear \n n or N → Change Signs \n e or E → Exit'
+  title = 'Help'
+  ctypes.windll.user32.MessageBoxExW(0, text, title, 0x40000)   
  
  elif x=="e" or x=="E":
   j = input("Exit? [y/n]: ")
@@ -77,4 +85,6 @@ while True:
  
  else:
   print("Enter Valid Operator")
+
+
 #end of ~THE CODE~
